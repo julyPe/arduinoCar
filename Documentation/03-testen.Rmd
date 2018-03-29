@@ -1,0 +1,42 @@
+# Testen der Einzelteile
+
+## Servo
+
+Mithilfe dieses Beispielcodes wurde der Servo getestet:
+
+```{c, eval=FALSE}
+#include<Servo.h>
+
+int servoPin = 5;
+int tasterPin = 4;
+
+Servo scanServo;
+
+void setup() {
+  scanServo.attach(servoPin,744,2200);
+  pinMode(tasterPin, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  if(digitalRead(tasterPin)){
+    servoMove();
+  }
+
+}
+
+void servoMove(){
+  scanServo.write(0);
+  Serial.println("Servo links");
+  delay(2000);
+  scanServo.write(180);
+  Serial.println("Servo rechts");
+  delay(2000);
+  scanServo.write(90);
+  Serial.println("Servo mitte");
+  delay(2000);
+}
+
+```
+

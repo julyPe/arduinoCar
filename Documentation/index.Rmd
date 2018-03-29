@@ -1,0 +1,33 @@
+---
+title: "Dokumentation Arduino Car"
+author: "Julia Petz"
+date: "28 March 2018"
+output:
+  bookdown::gitbook:
+    config:
+      toc:
+        collapse: subsection
+        scroll_highlight: yes
+        before: null
+        after: null
+      toolbar:
+        position: fixed
+      edit: null
+      download: ["pdf"]
+      search: yes
+      sharing:
+        facebook: no
+        twitter: no
+        weibo: no
+        instapper: no
+        vk: no
+  bookdown::pdf_book:
+    keep_tex: yes
+site: bookdown::bookdown_site
+urlcolor: blue
+link-citations: true
+---
+
+# Einleitung
+
+In diesem Dokument wird die Arbeit (Planen, Bauen und Programmieren) eines selbstfahrenden Autos mithilfe eines Arduino Uno dokumentiert.
