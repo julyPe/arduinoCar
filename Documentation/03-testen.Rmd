@@ -1,38 +1,48 @@
 # Testen der Einzelteile
 
+Momentan scheinen hier die Testcodes für ein Servo, einen Ultraschallsensor und DC-Motoren (unter der Verwendung eines Motorschutzes) auf. Weiterführende Codes stehen noch nicht zur Verfügung.
+
 ## Servo
 
 Mithilfe dieses Beispielcodes wurde der Servo getestet:
 
-```{c, eval=FALSE}
+```{c servo, eval=FALSE}
+// Einbinden der Servo.h Library für die Steuerung des Servos
 #include<Servo.h>
 
+// Pinbelegung des Servos und des Tasters am Arduino
 int servoPin = 5;
 int tasterPin = 4;
 
+// Servo-Instanz erstellen
 Servo scanServo;
 
 void setup() {
+  // Bekanntmachung der Pins (Input oder Output)
   scanServo.attach(servoPin,744,2200);
   pinMode(tasterPin, INPUT);
   Serial.begin(9600);
 }
 
 void loop() {
-
+  // Abfragen des Tasters
   if(digitalRead(tasterPin)){
     servoMove();
   }
 
 }
 
+// Funktion um den Servo zu bewegen
 void servoMove(){
+  // Servo wird auf Position mit Grad 0 bewegt
   scanServo.write(0);
   Serial.println("Servo links");
   delay(2000);
+  // Servo wird auf Position mit Grad 180 bewegt
   scanServo.write(180);
   Serial.println("Servo rechts");
   delay(2000);
+  // Servo wird auf Position mit Grad 90 bewegt
   scanServo.write(90);
   Serial.println("Servo mitte");
   delay(2000);
@@ -40,3 +50,112 @@ void servoMove(){
 
 ```
 
+Sobald ein Servo an den Arduino angeschlossen wird, wird ein `analogWrite();` auf den *PWM-Pins 9 und 10* verhindert. Ein Servo kann an diesen Pins ohne Probleme laufen, jedoch wird beispielsweise kein DC-Motor an diesen Pins funktionieren.
+
+## Ultraschallsensor
+
+Mit dem folgenden Code wurde der Sensor - noch unabhängig vom Servo - getestet.
+
+```{c usSensor, eval=FALSE}
+
+// Pinbelegung des Sensors am Arduino
+int trigger=7;
+int echo=6;
+int timeUS=0;
+int distance=0;
+
+void setup() {
+  Serial.begin(9600);
+  // Bekanntmachung on Input oder Output vorliegt
+  pinMode(trigger, OUTPUT);
+  pinMode(echo, INPUT);
+}
+
+void loop() {
+  // Spannung vom Trigger nehmen, damit später ein
+  // rauschfreies Signal vorhanden ist
+  digitalWrite(trigger, LOW);
+  delay(5);
+  // Ultraschallwelle wird losgeschickt
+  digitalWrite(trigger, HIGH);
+  delay(10);
+  // "Welle" endet, indem Spannung entfernt wird
+  digitalWrite(trigger, LOW);
+  // pulseIn - Mikorcontroller zählt Millisekunden bis
+  // das Echo am Sensor angelangt ist
+  timeUS = pulseIn(echo, HIGH);
+  // Berechnung der Entfernung in Zentimeter
+  // (es wird dabei mit der Schallgeschwindigkeit multipliziert)
+  distance = (timeUS/2) * 0.03432;
+  // Ausgabe der Distanz am seriellen Monitor
+  Serial.println(distance);
+}
+```
+
+## DC-Motoren
+
+```{c dc, eval=FALSE}
+// Pinbelegung der Motoren auf dem Arduino
+// Motor 1 (grün-gelb)
+int enA = 10;
+int in1 = 9;
+int in2 = 8;
+// Motor 2 (weiß-grau)
+int enB = 11;
+int in3 = 12;
+int in4 = 13;
+
+int tasterPin = 4;
+
+void setup(){
+  // alle Motoren-Pins als Output setzen
+  pinMode(enA, OUTPUT);
+  pinMode(enB, OUTPUT);
+  pinMode(in1, OUTPUT);
+  pinMode(in2, OUTPUT);
+  pinMode(in3, OUTPUT);
+  pinMode(in4, OUTPUT);
+  pinMode(tasterPin, INPUT);
+}
+
+void demoOne(){
+  // die Funktion lässt beide Räder zuerst vorwärts und 
+  // dann rückwärts laufen
+  // Motor 1 einschalten
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  // Geschwindigkeit wird auf 200 gesetzt
+  // mögliche Werte sind aus dem Intervall [0;255]
+  analogWrite(enA, 200);
+  // Motor 2 einschalten
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
+  // Geschwindigkeit wird auf 200 gesetzt
+  analogWrite(enB, 200);
+  
+  delay(2000);
+  
+  // Richtungswechsel
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);  
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, HIGH); 
+  
+  delay(2000);
+  
+  // Motoren werden ausgeschaltet
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, LOW);  
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, LOW);
+}
+
+void loop(){
+  if(digitalRead(tasterPin)){
+    demoOne();
+    delay(3000);
+  }
+}
+```
+
+Im nächsten Schritt werden dann die unterschiedlichen "Einzelgeräte" verbunden. Dieser Code - sowie der fertige Code für das selbstfahrende Auto - scheinen jedoch noch nicht auf.

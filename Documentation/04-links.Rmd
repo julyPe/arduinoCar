@@ -2,4 +2,12 @@
 
 ## Tutorials
 
-- [Funduino](www.funduino.com)
+- [Funduino](https://funduino.de/)
+- [Arduino Tutorial](http://www.arduino-tutorial.de/)
+- [tutorialspoint](https://www.tutorialspoint.com/arduino/index.htm)
+- [Madgyver](https://madgyver.de/de/)
+- [Arduinospielwiese](http://www.arduinospielwiese.de/)
+
+## Foren
+
+- [Arduino Forum](https://forum.arduino.cc/)

@@ -31,3 +31,6 @@ link-citations: true
 # Einleitung
 
 In diesem Dokument wird die Arbeit (Planen, Bauen und Programmieren) eines selbstfahrenden Autos mithilfe eines Arduino Uno dokumentiert.
+
+- [pdf-Datei](https://github.com/julyPe/arduinoCar/blob/master/docs/_main.pdf)
+- [docx-Datei](https://github.com/julyPe/arduinoCar/blob/master/docs/_main.docx)
