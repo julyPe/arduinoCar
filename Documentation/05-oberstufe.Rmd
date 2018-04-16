@@ -1,0 +1,26 @@
+# Oberstufe
+
+## Robotik-Projekt
+
+Innerhalb der Robotik-Einheiten soll ein selbstfahrendes Auto als autonomes System in Gruppenarbeit erstellt werden. Dabei sollen folgende Produkte am Ende fertiggestellt sein:
+
+**Gruppenarbeit:**
+
+- Dokumentation der Arbeitsschritte  
+    -	Planung  
+    -	Schaltplan  
+    -	Bauen des Autos  
+    -	Programm-Code (inklusive Kommentare)  
+-	selbstfahrendes Auto  
+-	Präsentation der Ergebnisse  
+
+
+## Termin 1
+
+Einführung in Robotik (inkl. Microcontroller Arduino) und Elektrotechnik.
+
+- [Einführung und Geschichte](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/introHistory.pdf)  
+- [Programmieraufgaben](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/ExerciseArduinoProgramming.pdf)  
+- [Grundlagen Elektrotechnik](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/basicsElectronic.pdf)
+
+Verwendung von [Tinkercad](https://www.tinkercad.com/) für das Programmieren.
