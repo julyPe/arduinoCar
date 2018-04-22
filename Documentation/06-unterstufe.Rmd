@@ -1,0 +1,8 @@
+# Unterstufe
+
+## Termin 1
+
+- [Einführung und Geschichte](https://github.com/julyPe/arduinoCar/blob/master/unterstufe/quiz_history.pdf)  
+- [Grundlagen Elektrotechnik](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/basicsElectronic.pdf)
+
+Programmierung mithilfe von [ArduinoBlocks](http://www.arduinoblocks.com/).

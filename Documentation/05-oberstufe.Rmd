@@ -21,6 +21,16 @@ Einführung in Robotik (inkl. Microcontroller Arduino) und Elektrotechnik.
 
 - [Einführung und Geschichte](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/introHistory.pdf)  
 - [Programmieraufgaben](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/ExerciseArduinoProgramming.pdf)  
-- [Grundlagen Elektrotechnik](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/basicsElectronic.pdf)
 
 Verwendung von [Tinkercad](https://www.tinkercad.com/) für das Programmieren.
+
+**für nächstes Mal:**
+
+- USB B auf USB A Kabel (Handykabel)
+- Schachtel für die Bauteile des Roboters (z.B.: Schuhschachtel)
+- Programmierübungen mit Kommentaren
+
+## Termin 2
+
+- [Grundlagen Elektrotechnik](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/basicsElectronic.pdf)
+- [Kleinprojekt Einparkhilfe](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/Einparkhilfe_Problemstellung.pdf)
