@@ -6,3 +6,12 @@
 - [Grundlagen Elektrotechnik](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/basicsElectronic.pdf)
 
 Programmierung mithilfe von [ArduinoBlocks](http://www.arduinoblocks.com/).
+
+## Termin 2
+
+- "Hello World"-Programm
+- LED zum Leuchten bringen
+
+## Termin 3
+
+- [Kleinprojekt Einparkhilfe](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/Einparkhilfe_Problemstellung.pdf)

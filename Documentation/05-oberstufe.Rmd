@@ -33,4 +33,9 @@ Verwendung von [Tinkercad](https://www.tinkercad.com/) für das Programmieren.
 ## Termin 2
 
 - [Grundlagen Elektrotechnik](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/basicsElectronic.pdf)
+
+
+## Termin 3
+
 - [Kleinprojekt Einparkhilfe](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/Einparkhilfe_Problemstellung.pdf)
+- [Musterlösung Programmieraufgaben](https://github.com/julyPe/arduinoCar/blob/master/oberstufe/programmingSolutions.pdf)
